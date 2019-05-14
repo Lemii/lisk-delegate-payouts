@@ -137,22 +137,35 @@ class PoolTotals extends React.Component {
                     {pool.toUpperCase()} Totals
                     <hr />
                   </Card.Title>
-                  <Row>
-                    <Col>Daily</Col>
-                    <Col>{(totals[pool].rewards.daily * userShares[pool]).toFixed(8)} LSK</Col>
-                  </Row>
-                  <Row>
-                    <Col>Weekly</Col>
-                    <Col>{(totals[pool].rewards.weekly * userShares[pool]).toFixed(8)} LSK</Col>
-                  </Row>
-                  <Row>
-                    <Col>Monthly</Col>
-                    <Col>{(totals[pool].rewards.monthly * userShares[pool]).toFixed(8)} LSK</Col>
-                  </Row>
-                  <Row>
-                    <Col>Annually</Col>
-                    <Col>{(totals[pool].rewards.yearly * userShares[pool]).toFixed(8)} LSK</Col>
-                  </Row>
+                  <p>
+                    Daily:{' '}
+                    <strong className="pl-2">
+                      {(totals[pool].rewards.daily * userShares[pool]).toFixed(4)} -{' '}
+                      {(totals[pool].rewards.daily * userShares[pool] * 1.2).toFixed(4)} LSK
+                    </strong>
+                  </p>
+                  <p>
+                    Weekly:{' '}
+                    <strong className="pl-2">
+                      {' '}
+                      {(totals[pool].rewards.weekly * userShares[pool]).toFixed(4)} -{' '}
+                      {(totals[pool].rewards.weekly * userShares[pool] * 1.2).toFixed(4)} LSK{' '}
+                    </strong>
+                  </p>
+                  <p>
+                    Monthly:{' '}
+                    <strong className="pl-2">
+                      {(totals[pool].rewards.monthly * userShares[pool]).toFixed(4)} -{' '}
+                      {(totals[pool].rewards.monthly * userShares[pool] * 1.2).toFixed(4)} LSK{' '}
+                    </strong>
+                  </p>
+                  <p>
+                    Annually:{' '}
+                    <strong className="pl-2">
+                      {(totals[pool].rewards.yearly * userShares[pool]).toFixed(4)} -{' '}
+                      {(totals[pool].rewards.yearly * userShares[pool] * 1.2).toFixed(4)} LSK{' '}
+                    </strong>
+                  </p>
                 </Card.Body>
               </Card>
             </Col>
