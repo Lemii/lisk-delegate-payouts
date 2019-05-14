@@ -91,6 +91,8 @@ class App extends React.Component {
   }
 
   handleChange = event => {
+    event.preventDefault();
+
     clearTimeout(timeoutId);
 
     const doDelayedChange = liskAmount => {
@@ -121,17 +123,15 @@ class App extends React.Component {
               </span>
             </Navbar.Brand>
             <Navbar.Collapse className="justify-content-end">
-              <h5 className="pr-2 align-middle mt-2 text-light">Amount</h5>
-              <Form inline>
-                <Form.Control
-                  type="number"
-                  size="lg"
-                  placeholder={defaultAmount}
-                  onChange={this.handleChange}
-                  name="liskAmount"
-                  className="font-weight-bold smaller"
-                />
-              </Form>
+              <h5 className="pr-2 align-middle mt-2 text-light">LSK #</h5>
+              <Form.Control
+                type="number"
+                size="lg"
+                placeholder={defaultAmount}
+                onChange={this.handleChange}
+                className="font-weight-bold smaller"
+                disabled={isLoading}
+              />
             </Navbar.Collapse>
           </Container>
         </Navbar>
