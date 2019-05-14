@@ -1,7 +1,7 @@
 {
   "name": "lisk-delegate-payouts",
   "homepage": "https://www.lisktools.eu/delegate-payouts",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "private": true,
   "dependencies": {
     "@liskhq/lisk-api-client": "^2.0.0",

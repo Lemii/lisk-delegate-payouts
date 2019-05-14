@@ -49,51 +49,65 @@ class PoolTotals extends React.Component {
       sherwood: rawPools.sherwood.filter(delegate => delegateNames.includes(delegate))
     };
 
+    let elite = 0.0;
     let gdt = 0.0;
     let sherwood = 0.0;
 
+    let gdtLowest = 0;
+    let eliteLowest = 0;
+    let sherwoodLowest = 0;
+
     delegates.forEach(delegate => {
-      if (pools.gdt.includes(delegate.username)) {
+      if (pools.elite.includes(delegate.username)) {
+        eliteLowest =
+          eliteLowest === 0 || delegate.vote < eliteLowest ? delegate.vote : eliteLowest;
+        elite += Object.keys(payouts).includes(delegate.username)
+          ? parseFloat(payouts[delegate.username].sharingPercentage)
+          : 25;
+      } else if (pools.gdt.includes(delegate.username)) {
+        gdtLowest = gdtLowest === 0 || delegate.vote < gdtLowest ? delegate.vote : gdtLowest;
         gdt += Object.keys(payouts).includes(delegate.username)
           ? parseFloat(payouts[delegate.username].sharingPercentage)
           : 6.25;
       } else if (pools.sherwood.includes(delegate.username)) {
+        sherwoodLowest =
+          sherwoodLowest === 0 || delegate.vote < sherwoodLowest ? delegate.vote : sherwoodLowest;
         sherwood += Object.keys(payouts).includes(delegate.username)
           ? parseFloat(payouts[delegate.username].sharingPercentage)
           : 66.66;
       }
     });
 
+    const eliteAverage = elite / pools.elite.length / 100;
     const gdtAverage = gdt / pools.gdt.length / 100;
     const sherwoodAverage = sherwood / pools.sherwood.length / 100;
 
     const totals = {
       elite: {
-        voteWeight: 0,
-        rewards: this.calculatePoolRewards(pools.elite.length, 0.25)
+        voteWeight: 0.0,
+        rewards: this.calculatePoolRewards(pools.elite.length, eliteAverage)
       },
       gdt: {
-        voteWeight: 0,
+        voteWeight: 0.0,
         rewards: this.calculatePoolRewards(pools.gdt.length, gdtAverage)
       },
       sherwood: {
-        voteWeight: 0,
+        voteWeight: 0.0,
         rewards: this.calculatePoolRewards(pools.sherwood.length, sherwoodAverage)
       }
     };
 
     delegates.forEach(delegate => {
-      const delegateVoteWeight = delegate.vote / 100000000;
       const delegateBalance = delegate.balance / 100000000;
 
       if (pools.elite.includes(delegate.username)) {
-        totals.elite.voteWeight += delegateVoteWeight;
+        totals.elite.voteWeight += eliteLowest / 100000000;
         totals.elite.voteWeight -= delegateBalance * pools.elite.length;
       } else if (pools.gdt.includes(delegate.username)) {
-        totals.gdt.voteWeight += delegateVoteWeight;
+        totals.gdt.voteWeight += gdtLowest / 100000000;
         totals.gdt.voteWeight -= delegateBalance * pools.gdt.length;
       } else if (pools.sherwood.includes(delegate.username)) {
-        totals.sherwood.voteWeight += delegateVoteWeight;
+        totals.sherwood.voteWeight += sherwoodLowest / 100000000;
         totals.sherwood.voteWeight -= delegateBalance * pools.sherwood.length;
       }
     });
