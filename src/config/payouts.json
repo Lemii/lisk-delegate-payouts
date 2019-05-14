@@ -1,0 +1,77 @@
+{
+  "4miners.net": {
+    "sharingPercentage": 25
+  },
+  "communitypool": {
+    "sharingPercentage": 80
+  },
+  "dakk": {
+    "sharingPercentage": 15
+  },
+  "devasive": {
+    "sharingPercentage": 60
+  },
+  "elevate": {
+    "sharingPercentage": 30
+  },
+  "elite": {
+    "sharingPercentage": 25
+  },
+  "gdt": {
+    "sharingPercentage": 6.25
+  },
+  "gdtpool": {
+    "sharingPercentage": 90
+  },
+  "joel": {
+    "sharingPercentage": 50
+  },
+  "liskpool.top": {
+    "sharingPercentage": 85
+  },
+  "liskpool_com_01": {
+    "sharingPercentage": 50
+  },
+  "ondin": {
+    "sharingPercentage": 25
+  },
+  "phoenix1969": {
+    "sharingPercentage": 25
+  },
+  "robinhood": {
+    "sharingPercentage": 100
+  },
+  "samuray": {
+    "sharingPercentage": 50
+  },
+  "sgdias": {
+    "sharingPercentage": 20
+  },
+  "sherwood": {
+    "sharingPercentage": 66.6
+  },
+  "shinekami": {
+    "sharingPercentage": 85
+  },
+  "slasheks": {
+    "sharingPercentage": 25
+  },
+  "stellardynamic": {
+    "sharingPercentage": 30
+  },
+  "tembo": {
+    "sharingPercentage": 15
+  },
+  "thepool": {
+    "sharingPercentage": 35
+  },
+  "vekexasia": {
+    "sharingPercentage": 18.75
+  },
+  "vipertkd": {
+    "sharingPercentage": 50
+  },
+  "vrlc92": {
+    "sharingPercentage": 50
+  }
+}

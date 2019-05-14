@@ -1,0 +1,19 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "mocha": true,
+  },
+  "rules": {
+    "react/jsx-one-expression-per-line": [true, { "allow": "single-child" }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "arrow-parens": [2, "as-needed"],
+    "comma-dangle": ["error", "never"],
+    "implicit-arrow-linebreak": "off",
+    "linebreak-style": 0,
+    "radix": ["error", "as-needed"]
+    }
+}

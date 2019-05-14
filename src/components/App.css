@@ -1,0 +1,30 @@
+html {
+  scroll-behavior: smooth;
+  font-family: 'Lato', sans-serif !important;
+  font-size: 0.9em !important
+}
+
+.smaller {
+  max-width: 100px
+}
+
+.header {
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.title {
+  font-weight: 600;
+}
+
+.floating-button {
+  transition-duration: 0.4s;
+  opacity: 0;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  padding: 0.2rem 1.1rem;
+  border-radius: 1rem;
+  font-size: 2em;
+  cursor: pointer;
+}
