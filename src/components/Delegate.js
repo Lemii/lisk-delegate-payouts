@@ -50,7 +50,7 @@ class Delegate extends React.Component {
   };
 
   render() {
-    const { delegate, rewards } = this.props;
+    const { delegate, rewards, pools } = this.props;
     const { userShare, delegateShare, isLoading } = this.state;
 
     return (
@@ -60,7 +60,18 @@ class Delegate extends React.Component {
             <td>
               <strong>{delegate.rank}</strong>
             </td>
-            <td>{delegate.username}</td>
+            <td>
+              {delegate.username}{' '}
+              {pools.elite.includes(delegate.username) && (
+                <span className="badge badge-warning text-light">Elite</span>
+              )}
+              {pools.gdt.includes(delegate.username) && (
+                <span className="badge badge-primary text-light">GDT</span>
+              )}
+              {pools.sherwood.includes(delegate.username) && (
+                <span className="badge badge-info text-light">Sherwood</span>
+              )}
+            </td>
             <td>{delegateShare * 100}%</td>
             <td>
               {(delegate.vote / 100000000).toLocaleString().slice(0, -4)}{' '}
