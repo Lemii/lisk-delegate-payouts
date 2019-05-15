@@ -16,16 +16,12 @@ const ToolTip = props => {
       placement="top"
       overlay={
         <Tooltip id={`tooltip-${name}`} className="text-justify">
-          Since it is impossible to accurately keep track of all additional group bonusses and
-          contribtutions on top of their regular payouts, the calculations below do{' '}
-          <u>
-            <strong>not</strong>
-          </u>{' '}
-          include these. Therefore, actual payouts might be a little bit{' '}
+          The displayed sums are purely based off individual vote weight and sharing percentages.
+          Due to rules and bonuses, actual payouts may turn out to be{' '}
           <u>
             <strong>higher</strong>
           </u>{' '}
-          than shown below.
+          than shown here.
         </Tooltip>
       }
     >

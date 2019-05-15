@@ -16,6 +16,10 @@ html {
   font-weight: 600;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 .floating-button {
   transition-duration: 0.4s;
   opacity: 0;
