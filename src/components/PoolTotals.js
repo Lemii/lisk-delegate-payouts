@@ -3,6 +3,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import PropTypes from 'prop-types';
+import ToolTip from './ToolTip';
 
 const payouts = require('../config/payouts.json');
 
@@ -134,7 +135,7 @@ class PoolTotals extends React.Component {
               <Card text="dark" className="shadow">
                 <Card.Body>
                   <Card.Title className="text-center">
-                    {pool.toUpperCase()} Totals
+                    {pool.toUpperCase()} Totals <ToolTip name={pool} />
                     <hr />
                   </Card.Title>
                   <p>
