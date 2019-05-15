@@ -122,30 +122,25 @@ class App extends React.Component {
                 Lisk Delegate Payouts
               </span>
             </Navbar.Brand>
-            <Navbar.Collapse className="justify-content-end">
-              <h5 className="pr-2 align-middle mt-2 text-light">LSK #</h5>
-              <Form.Control
-                type="number"
-                size="lg"
-                placeholder={defaultAmount}
-                onChange={this.handleChange}
-                className="font-weight-bold smaller"
-                disabled={isLoading}
-              />
-            </Navbar.Collapse>
+            <Navbar.Collapse className="justify-content-end">hi</Navbar.Collapse>
           </Container>
         </Navbar>
         <Container>
           {!isLoading ? (
             <>
-              <h1 className="text-center mt-5 mb-4">Pool Summaries</h1>
-              <PoolTotals
-                delegates={delegates}
-                pools={pools}
-                liskAmount={liskAmount}
-                rewards={rewards}
-              />
-
+              <div className="text-center align-middle mt-5">
+                <h3 className="d-inline align-middle mr-3">Enter LSK amount</h3>
+                <Form.Control
+                  type="number"
+                  size="lg"
+                  placeholder={defaultAmount}
+                  onChange={this.handleChange}
+                  className="font-weight-bold align-middle smaller d-inline"
+                  disabled={isLoading}
+                  min="0"
+                />
+              </div>
+              <hr className="w-50 mt-5 mb-5" />
               <h1 className="text-center mb-4">Individual Delegates</h1>
               <Table striped bordered hover size="sm" className="shadow text-center">
                 <thead>
